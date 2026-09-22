@@ -1,0 +1,1167 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이마트 신촌 K-Palette Zone 통합 홍보 기획서 & 캠페인 본부</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        emart: {
+                            yellow: '#FFC800',
+                            gold: '#F59E0B',
+                            dark: '#111827',
+                            card: '#1F2937',
+                            accent: '#EC4899'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card:hover {
+            border-color: rgba(255, 200, 0, 0.3);
+        }
+        .emart-gradient-text {
+            background: linear-gradient(135deg, #FFC800 0%, #F59E0B 40%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .emart-gradient-bg {
+            background: linear-gradient(135deg, #FFC800 0%, #EAB308 50%, #D97706 100%);
+        }
+        .purple-pink-gradient {
+            background: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between antialiased selection:bg-amber-400 selection:text-black">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-40 w-full border-b border-slate-800 bg-slate-950/85 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-xl emart-gradient-bg flex items-center justify-center text-slate-950 font-extrabold text-xl shadow-lg shadow-amber-500/20">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </div>
+                    <div>
+                        <span class="font-black text-lg tracking-tight text-white block leading-none">e-mart Sinchon <span class="text-amber-400">PR HUB</span></span>
+                        <span class="text-xs text-slate-400">K-Palette Zone 통합 마케팅 기획서</span>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-1 font-medium text-sm">
+                    <a href="#overview" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">기획 개요</a>
+                    <a href="#cardnews" class="px-3 py-2 rounded-lg text-amber-400 font-semibold hover:bg-slate-800 transition"><i class="fa-solid fa-images mr-1"></i>카드뉴스 (6종)</a>
+                    <a href="#shorts" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition"><i class="fa-solid fa-video mr-1"></i>9:16 숏츠</a>
+                    <a href="#surveys" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">설문조사 (4종)</a>
+                    <a href="#analytics" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">분석 대시보드</a>
+                    <a href="#roadmap" class="px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition">실행 일정</a>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <button onclick="shareProposal()" class="px-3 py-2 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition border border-slate-700 flex items-center gap-1.5">
+                        <i class="fa-solid fa-share-nodes text-amber-400"></i>
+                        <span class="hidden sm:inline">기획서 공유</span>
+                    </button>
+                    <button onclick="window.print()" class="px-3 py-2 text-xs font-bold rounded-lg emart-gradient-bg text-slate-950 shadow-md transition hover:opacity-95 flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>PDF 출력</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Hero Header -->
+    <header id="overview" class="relative overflow-hidden py-16 lg:py-20 border-b border-slate-800/80 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-pink-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-300 text-xs font-semibold mb-6">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+                이마트 신촌점 B3 K-Palette Zone Launching PR Strategy
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
+                카드뉴스 & 9:16 바이럴 숏츠 기반 <br class="hidden sm:inline"/>
+                <span class="emart-gradient-text">이마트 신촌 K-Palette Zone 홍보 기획서</span>
+            </h1>
+
+            <p class="text-slate-300 text-base sm:text-lg max-w-3xl mb-10 leading-relaxed font-light">
+                외국인 관광객 및 MZ세대의 쇼핑 만족도를 높이는 <strong class="text-amber-400 font-semibold">카드뉴스 6종 콘텐츠</strong>, 
+                알고리즘 확산형 <strong class="text-pink-400 font-semibold">9:16 바이럴 숏츠 (샤크 숏츠.mp4)</strong>, 그리고 정밀 피드백을 수집하는 
+                <strong class="text-blue-400 font-semibold">4단계 구글 설문조사</strong>를 통합한 온·오프라인 연계 바이럴 캠페인입니다.
+            </p>
+
+            <!-- Key Metric KPI Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl">
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <p class="text-xs text-slate-400 font-medium mb-1"><i class="fa-solid fa-images text-amber-400 mr-1"></i>카드뉴스 콘텐츠</p>
+                    <p class="text-2xl font-bold text-white">6 Card Slides</p>
+                    <p class="text-[11px] text-amber-400 mt-1"><i class="fa-solid fa-check"></i> 고화질 슬라이더 수록</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <p class="text-xs text-slate-400 font-medium mb-1"><i class="fa-solid fa-video text-pink-400 mr-1"></i>9:16 바이럴 숏츠</p>
+                    <p class="text-2xl font-bold text-pink-400">샤크 숏츠.mp4</p>
+                    <p class="text-[11px] text-pink-300/80 mt-1"><i class="fa-solid fa-bolt"></i> 수직형 세로 영상 플레이어</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <p class="text-xs text-slate-400 font-medium mb-1"><i class="fa-solid fa-list-check text-blue-400 mr-1"></i>통합 설문조사</p>
+                    <p class="text-2xl font-bold text-blue-400">4개 구글폼</p>
+                    <p class="text-[11px] text-blue-300/80 mt-1"><i class="fa-solid fa-link"></i> 링크 및 미리보기 연동</p>
+                </div>
+                <div class="glass-card p-4 rounded-2xl border border-slate-800">
+                    <p class="text-xs text-slate-400 font-medium mb-1"><i class="fa-solid fa-location-dot text-emerald-400 mr-1"></i>타겟 매장</p>
+                    <p class="text-2xl font-bold text-emerald-400">이마트 신촌 B3</p>
+                    <p class="text-[11px] text-emerald-300/80 mt-1"><i class="fa-solid fa-plane"></i> 공항 배송 연계 서비스</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- Card News Interactive Section (6 Cards) -->
+        <section id="cardnews" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-images text-amber-400"></i> K-Palette Zone 카드뉴스 캠페인 (6종)
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">이마트 신촌점 B3 K-Palette Zone 핵심 안내 및 해결 솔루션을 담은 6장의 바이럴 카드뉴스입니다.</p>
+                </div>
+                <span class="text-xs font-semibold text-amber-400 bg-amber-950/60 border border-amber-800/60 px-3 py-1 rounded-full flex items-center gap-1">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> 01.jpg ~ 06.jpg 연동
+                </span>
+            </div>
+
+            <!-- Card News Main Carousel Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Main Featured Slide Viewer -->
+                <div class="lg:col-span-7 flex flex-col items-center">
+                    <div class="relative w-full max-w-[500px] aspect-square rounded-2xl bg-slate-900 border-2 border-amber-500/30 overflow-hidden shadow-2xl shadow-amber-500/10 group">
+                        <!-- Card News Image Loader -->
+                        <img id="cardNewsMainImage" src="01.jpg" alt="카드뉴스 01" class="w-full h-full object-cover transition-all duration-300" onerror="handleCardImgError(this, 1)">
+                        
+                        <!-- Overlay Badge -->
+                        <div class="absolute top-4 left-4 z-20 px-3 py-1 rounded-lg bg-slate-950/80 backdrop-blur-md border border-amber-500/40 text-amber-400 font-bold text-xs flex items-center gap-1.5">
+                            <span id="currentCardBadgeNumber">CARD 01 / 06</span>
+                        </div>
+
+                        <!-- Fullscreen Preview Button -->
+                        <button onclick="openCardLightbox()" class="absolute top-4 right-4 z-20 w-9 h-9 rounded-xl bg-slate-950/80 backdrop-blur-md border border-slate-700 text-white hover:text-amber-400 transition flex items-center justify-center">
+                            <i class="fa-solid fa-expand"></i>
+                        </button>
+
+                        <!-- Slide Navigation Arrows -->
+                        <button onclick="prevCard()" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/70 hover:bg-amber-400 text-white hover:text-slate-950 border border-slate-700 transition flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-left text-base"></i>
+                        </button>
+                        <button onclick="nextCard()" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/70 hover:bg-amber-400 text-white hover:text-slate-950 border border-slate-700 transition flex items-center justify-center">
+                            <i class="fa-solid fa-chevron-right text-base"></i>
+                        </button>
+
+                        <!-- Bottom Slide Info Caption -->
+                        <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent p-5 pt-10 text-white">
+                            <h4 id="cardSlideTitle" class="font-bold text-base text-amber-300">CARD 01: K-Palette Zone 도입</h4>
+                            <p id="cardSlideDesc" class="text-xs text-slate-300 mt-1 line-clamp-2 leading-relaxed">
+                                한국 여행 와서 뭐 살지 고민돼? 진짜 한국인이 사랑하는 리얼 픽, 이마트 신촌 K-Palette Zone!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide Controls & Indicator Dots -->
+                    <div class="flex items-center gap-2 mt-4">
+                        <template id="dotTemplate">
+                            <button class="w-3 h-3 rounded-full transition-all duration-200"></button>
+                        </template>
+                        <div id="cardDotsContainer" class="flex gap-2">
+                            <!-- Dots generated by JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: Card News Storyboard Breakdown & Thumbnail Grid -->
+                <div class="lg:col-span-5 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-layer-group text-amber-400"></i> 카드뉴스 6장 전체 리스트
+                        </h3>
+                        <label class="cursor-pointer text-xs text-amber-400 hover:underline flex items-center gap-1">
+                            <i class="fa-solid fa-folder-open"></i> 이미지 로컬 파일 다시 지정
+                            <input type="file" multiple accept="image/*" onchange="loadCustomCardImages(event)" class="hidden">
+                        </label>
+                    </div>
+
+                    <!-- 6 Thumbnail Cards Grid -->
+                    <div class="grid grid-cols-3 gap-3">
+                        <div onclick="selectCard(0)" id="thumb-0" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border-2 border-amber-400 bg-slate-900 group shadow-md transition">
+                            <img src="01.jpg" alt="Card 1" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 1)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-amber-400 font-bold">01</div>
+                        </div>
+                        <div onclick="selectCard(1)" id="thumb-1" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition">
+                            <img src="02.jpg" alt="Card 2" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 2)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-slate-300 font-bold">02</div>
+                        </div>
+                        <div onclick="selectCard(2)" id="thumb-2" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition">
+                            <img src="03.jpeg" alt="Card 3" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 3)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-slate-300 font-bold">03</div>
+                        </div>
+                        <div onclick="selectCard(3)" id="thumb-3" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition">
+                            <img src="04.jpg" alt="Card 4" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 4)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-slate-300 font-bold">04</div>
+                        </div>
+                        <div onclick="selectCard(4)" id="thumb-4" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition">
+                            <img src="05.jpg" alt="Card 5" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 5)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-slate-300 font-bold">05</div>
+                        </div>
+                        <div onclick="selectCard(5)" id="thumb-5" class="cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition">
+                            <img src="06.jpg" alt="Card 6" class="w-full h-full object-cover group-hover:scale-105 transition" onerror="handleCardImgError(this, 6)">
+                            <div class="absolute bottom-1 right-1 bg-slate-950/80 px-1.5 py-0.5 rounded text-[10px] text-slate-300 font-bold">06</div>
+                        </div>
+                    </div>
+
+                    <!-- Selected Card Details Card -->
+                    <div class="glass-card p-4 rounded-xl border border-slate-800 space-y-2">
+                        <div class="text-xs font-bold text-amber-400 flex items-center justify-between">
+                            <span id="cardDetailCategory">CARD 01 : 메인 메세지</span>
+                            <span class="text-slate-500 font-normal">Sinchon Emart B3</span>
+                        </div>
+                        <p id="cardDetailText" class="text-xs text-slate-300 leading-relaxed">
+                            "한국 여행 와서 뭐 살지 고민돼? 틱톡·샤오홍슈 핫템부터 K-라면 꿀조합까지 한눈에! 이제 이마트 신촌 K-Palette Zone에서 스마트하게 즐기자!"
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- YouTube Shorts Video Section (9:16 Aspect Ratio) -->
+        <section id="shorts" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-brands fa-youtube text-red-500"></i> 바이럴 숏츠(Shorts) 마케팅 센터
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">9:16 세로형 비율의 대표 숏츠 영상 콘텐츠 '샤크 숏츠.mp4' 비주얼 플레이어입니다.</p>
+                </div>
+                <span class="text-xs text-red-400 bg-red-950/50 border border-red-800/60 px-3 py-1 rounded-full flex items-center gap-1">
+                    <i class="fa-solid fa-fire animate-bounce"></i> 9:16 Vertical Video
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left: Interactive Mobile 9:16 Shorts Simulator -->
+                <div class="lg:col-span-5 flex flex-col items-center">
+                    <div class="relative w-[300px] sm:w-[320px] aspect-[9/16] bg-slate-950 rounded-[40px] p-3 border-4 border-slate-800 shadow-2xl shadow-purple-900/20 flex flex-col justify-between overflow-hidden">
+                        <!-- Phone Header Notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-36 h-5 bg-slate-800 rounded-b-xl z-30"></div>
+                        
+                        <!-- Video Display Area (9:16 Ratio) -->
+                        <div class="relative w-full h-full rounded-[30px] overflow-hidden bg-slate-900 group">
+                            <!-- HTML5 Video Player for 샤크 숏츠.mp4 -->
+                            <div id="shortsPlayerContainer" class="w-full h-full relative">
+                                <video id="shortsVideo" class="w-full h-full object-cover rounded-[30px]" autoplay loop muted playsinline onerror="handleVideoError()">
+                                    <source src="샤크 숏츠.mp4" type="video/mp4">
+                                    사용하시는 브라우저는 비디오 태그를 지원하지 않습니다.
+                                </video>
+                                <iframe id="shortsIframe" class="w-full h-full rounded-[30px] hidden" src="" title="YouTube Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                
+                                <!-- Video Fallback Message -->
+                                <div id="videoFallback" class="absolute inset-0 bg-slate-900/90 hidden flex flex-col items-center justify-center p-6 text-center z-10 space-y-3">
+                                    <div class="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center text-pink-400 text-xl">
+                                        <i class="fa-solid fa-file-video"></i>
+                                    </div>
+                                    <h4 class="text-sm font-bold text-white">'샤크 숏츠.mp4' 파일 대기 중</h4>
+                                    <p class="text-xs text-slate-400 leading-relaxed">
+                                        동일 폴더 내 <span class="text-purple-300 font-mono">샤크 숏츠.mp4</span> 파일이 위치하면 자동 재생됩니다. 아래 버튼으로 파일을 직접 선택할 수도 있습니다.
+                                    </p>
+                                    <label class="cursor-pointer px-3 py-1.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold transition">
+                                        <i class="fa-solid fa-upload mr-1"></i> 파일 선택하기
+                                        <input type="file" accept="video/*" onchange="loadLocalVideoFile(event)" class="hidden">
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Overlay UI elements simulating Shorts interface -->
+                            <div class="absolute bottom-4 left-3 right-12 z-20 space-y-2 pointer-events-none text-white">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full emart-gradient-bg text-slate-950 flex items-center justify-center font-black text-xs">eM</div>
+                                    <span class="font-bold text-xs shadow-text">@Emart_Sinchon</span>
+                                    <button class="px-2 py-0.5 bg-red-600 text-white rounded-full text-[10px] font-bold">구독</button>
+                                </div>
+                                <p class="text-xs font-medium leading-snug line-clamp-2 text-shadow" id="shortsTitleDisplay">
+                                    🦈 샤크 숏츠 (Shark Shorts) - 이마트 신촌 K-Palette Zone 바이럴 9:16 영상!
+                                </p>
+                                <div class="flex items-center gap-1.5 text-[10px] text-slate-300">
+                                    <i class="fa-solid fa-music"></i>
+                                    <span id="shortsSoundDisplay">오리지널 사운드 - 이마트 K-Palette BGM</span>
+                                </div>
+                            </div>
+
+                            <!-- Right Action Buttons -->
+                            <div class="absolute bottom-6 right-2 z-20 flex flex-col items-center gap-4 text-white text-xs">
+                                <button onclick="toggleVideoMute()" class="flex flex-col items-center gap-1 group/btn pointer-events-auto">
+                                    <div class="w-9 h-9 rounded-full bg-slate-900/60 backdrop-blur-md flex items-center justify-center hover:bg-purple-600 transition">
+                                        <i class="fa-solid fa-volume-xmark text-base" id="soundIcon"></i>
+                                    </div>
+                                    <span class="text-[10px]" id="soundLabel">음소거</span>
+                                </button>
+                                <button onclick="likeShorts()" class="flex flex-col items-center gap-1 group/btn pointer-events-auto">
+                                    <div class="w-9 h-9 rounded-full bg-slate-900/60 backdrop-blur-md flex items-center justify-center hover:bg-red-600 transition">
+                                        <i class="fa-solid fa-heart text-base group-hover/btn:scale-110 transition" id="likeIcon"></i>
+                                    </div>
+                                    <span class="text-[10px]" id="likeCount">42.8K</span>
+                                </button>
+                                <button class="flex flex-col items-center gap-1 pointer-events-auto">
+                                    <div class="w-9 h-9 rounded-full bg-slate-900/60 backdrop-blur-md flex items-center justify-center hover:bg-blue-600 transition">
+                                        <i class="fa-solid fa-comment text-base"></i>
+                                    </div>
+                                    <span class="text-[10px]">3,109</span>
+                                </button>
+                                <button onclick="shareProposal()" class="flex flex-col items-center gap-1 pointer-events-auto">
+                                    <div class="w-9 h-9 rounded-full bg-slate-900/60 backdrop-blur-md flex items-center justify-center hover:bg-emerald-600 transition">
+                                        <i class="fa-solid fa-share text-base"></i>
+                                    </div>
+                                    <span class="text-[10px]">공유</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Shorts Content Strategy & Source Switcher -->
+                <div class="lg:col-span-7 space-y-6">
+                    <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                <i class="fa-solid fa-sliders text-pink-400"></i> 숏츠 비디오 소스 컨트롤러
+                            </h3>
+                            <span class="text-xs text-purple-400 font-medium">샤크 숏츠.mp4</span>
+                        </div>
+                        <p class="text-xs text-slate-400">
+                            기본 영상으로 <strong class="text-white">샤크 숏츠.mp4</strong>가 연동되어 있습니다. 로컬 MP4 파일 선택 또는 유튜브 URL을 통해 영상을 자유롭게 변경할 수 있습니다.
+                        </p>
+                        
+                        <!-- Mode Selector Buttons -->
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <button onclick="playSharkShorts()" class="px-3.5 py-2 rounded-xl purple-pink-gradient text-white font-semibold text-xs transition flex items-center gap-1.5 shadow-md">
+                                <i class="fa-solid fa-play"></i> 샤크 숏츠.mp4 재생
+                            </button>
+                            <label class="cursor-pointer px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs transition border border-slate-700 flex items-center gap-1.5">
+                                <i class="fa-solid fa-folder-open text-amber-400"></i> 내 PC MP4 파일 지정
+                                <input type="file" accept="video/*" onchange="loadLocalVideoFile(event)" class="hidden">
+                            </label>
+                        </div>
+
+                        <!-- Custom URL Switcher -->
+                        <div class="flex flex-col sm:flex-row gap-2 pt-2">
+                            <input type="text" id="customShortsInput" placeholder="유튜브 Shorts URL 입력 (예: https://youtube.com/shorts/...)" class="flex-1 bg-slate-950 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-pink-500">
+                            <button onclick="updateShortsVideo()" class="px-4 py-2.5 rounded-xl bg-pink-600 hover:bg-pink-500 text-white font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-rotate"></i> YouTube 연동
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Storyboard & Strategy Breakdown -->
+                    <div class="space-y-4">
+                        <h3 class="text-base font-bold text-white">🎬 샤크 숏츠 바이럴 제작 스토리보드</h3>
+
+                        <div class="glass-card p-4 rounded-xl flex gap-4 items-start border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                01
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">시선 집중 후킹 (0~3초)</h4>
+                                    <span class="text-[10px] px-2 py-0.5 rounded bg-red-500/20 text-red-300">샤크 모티프 시각 연출</span>
+                                </div>
+                                <p class="text-xs text-slate-400">
+                                    "한국 마트에서 길 잃고 멘붕 온 트래블러?" 질문 문구와 샤크 모티프 비주얼로 이탈 없는 3초 후킹 유도.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl flex gap-4 items-start border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                02
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">카드뉴스 Solution 시각화 (4~20초)</h4>
+                                    <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">K-Palette Zone 체험</span>
+                                </div>
+                                <p class="text-xs text-slate-400">
+                                    카드뉴스에서 다룬 바닥 안내선, NFC 번역 태그, K-라면 꿀조합을 리얼하게 쇼핑하는 세로 9:16 비주얼.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-xl flex gap-4 items-start border border-slate-800">
+                            <div class="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-sm shrink-0">
+                                03
+                            </div>
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2">
+                                    <h4 class="text-sm font-bold text-white">설문 참여 & 매장 방문 CTA (21~30초)</h4>
+                                    <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">구글 설문 유입</span>
+                                </div>
+                                <p class="text-xs text-slate-400">
+                                    "이마트 신촌점 B3에서 만나요! 하단 링크 30초 설문 시 K-Snack 증정!" 모션 자막으로 설문조사 유입.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Survey Collection Section (4 Google Forms) -->
+        <section id="surveys" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-square-poll-vertical text-blue-400"></i> 캠페인 구글 설문조사 센터 (4종)
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">제출해주신 4개 구글 설문지의 목적, 바로가기 및 미리보기 기능입니다.</p>
+                </div>
+                <span class="text-xs text-slate-400 bg-slate-800 px-3 py-1 rounded-full border border-slate-700">Google Forms Integrated</span>
+            </div>
+
+            <!-- Grid of 4 Surveys -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <!-- Survey Card 1 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-blue-500/40 transition">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-blue-500/20 border border-blue-500/30 text-blue-300 text-xs font-bold">설문 01</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock"></i> 소요시간: 약 2분</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">01. 소비자 인식 및 니즈 조사</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                타겟 고객층의 마트 쇼핑 인지도 및 잠재적 니즈를 파악하기 위한 기초 조사 설문입니다.
+                            </p>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">구글 폼 URL:</span>
+                                <span class="text-blue-400 font-mono truncate max-w-[200px]">forms.gle/LfQtqiei7zC3sCiQ6</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">목표 표본:</span>
+                                <span class="font-semibold text-white">800 명</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-1">
+                                <div class="bg-blue-500 h-full rounded-full" style="width: 82%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex items-center gap-2">
+                        <a href="https://forms.gle/LfQtqiei7zC3sCiQ6" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 설문 응답 창 열기
+                        </a>
+                        <button onclick="openSurveyModal('https://docs.google.com/forms/d/e/1FAIpQLSe8BQZNIrFY2qbNb3gQlCK_t0XHSl1qva1QkAl1AonViCqr7w/viewform?embedded=true', '01. 소비자 인식 및 니즈 조사')" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition border border-slate-700 flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i> 미리보기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Survey Card 2 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-purple-500/40 transition">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-purple-500/20 border border-purple-500/30 text-purple-300 text-xs font-bold">설문 02</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock"></i> 소요시간: 약 3분</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">02. 브랜드 선호도 & 세부 평가</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                K-Palette Zone 브랜드 선호 요인 및 카테고리별 상품 만족도를 심층 측정하는 설문입니다.
+                            </p>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">구글 폼 URL:</span>
+                                <span class="text-purple-400 font-mono truncate max-w-[200px]">1FAIpQLSe8BQZNIrFY2qb...</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">목표 표본:</span>
+                                <span class="font-semibold text-white">600 명</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-1">
+                                <div class="bg-purple-500 h-full rounded-full" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex items-center gap-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8BQZNIrFY2qbNb3gQlCK_t0XHSl1qva1QkAl1AonViCqr7w/viewform?usp=header" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 설문 응답 창 열기
+                        </a>
+                        <button onclick="openSurveyModal('https://docs.google.com/forms/d/e/1FAIpQLSe8BQZNIrFY2qbNb3gQlCK_t0XHSl1qva1QkAl1AonViCqr7w/viewform?embedded=true', '02. 브랜드 선호도 & 세부 평가')" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition border border-slate-700 flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i> 미리보기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Survey Card 3 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-pink-500/40 transition">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-pink-500/20 border border-pink-500/30 text-pink-300 text-xs font-bold">설문 03</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock"></i> 소요시간: 약 2분</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">03. 카드뉴스 & 숏츠 반응도 조사</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                카드뉴스 6종 및 숏츠 영상의 흥미도, 정보 전달력 및 바이럴 만족도를 검증하는 피드백 설문입니다.
+                            </p>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">구글 폼 URL:</span>
+                                <span class="text-pink-400 font-mono truncate max-w-[200px]">1FAIpQLScxolG0so7GQPp...</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">목표 표본:</span>
+                                <span class="font-semibold text-white">700 명</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-1">
+                                <div class="bg-pink-500 h-full rounded-full" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex items-center gap-2">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScxolG0so7GQPpUXDdVRcF12WFmhGMJfTmw1kxnWUkPSVh9OA/viewform" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-pink-600 hover:bg-pink-500 text-white text-xs font-semibold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> 설문 응답 창 열기
+                        </a>
+                        <button onclick="openSurveyModal('https://docs.google.com/forms/d/e/1FAIpQLScxolG0so7GQPpUXDdVRcF12WFmhGMJfTmw1kxnWUkPSVh9OA/viewform?embedded=true', '03. 카드뉴스 & 숏츠 반응도 조사')" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition border border-slate-700 flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i> 미리보기
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Survey Card 4 -->
+                <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-emerald-500/40 transition">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <span class="px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold">설문 04</span>
+                            <span class="text-xs text-slate-400"><i class="fa-regular fa-clock"></i> 관리자/편집용</span>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white mb-2">04. 최종 홍보 평가 & 편집 관리</h3>
+                            <p class="text-xs text-slate-400 leading-relaxed">
+                                홍보 기획자 및 매장 관계자가 문항을 수정을 보완하고 결과를 종합 검토하는 주체용 설문입니다.
+                            </p>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">구글 폼 URL:</span>
+                                <span class="text-emerald-400 font-mono truncate max-w-[200px]">1aR7Rm0J5-r-PSzTd1d9...</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-400">목표 표본:</span>
+                                <span class="font-semibold text-white">400 명</span>
+                            </div>
+                            <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden mt-1">
+                                <div class="bg-emerald-500 h-full rounded-full" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-6 flex items-center gap-2">
+                        <a href="https://docs.google.com/forms/d/1aR7Rm0J5-r-PSzTd1d9LvZdHq9oJsS9WqkYZoOB8oYI/edit?usp=drive_web&ouid=111461572944256322957" target="_blank" class="flex-1 py-2.5 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold text-center transition flex items-center justify-center gap-1.5 shadow-md">
+                            <i class="fa-solid fa-pen-to-square"></i> 편집/관리 창 열기
+                        </a>
+                        <button onclick="openSurveyModal('https://docs.google.com/forms/d/1aR7Rm0J5-r-PSzTd1d9LvZdHq9oJsS9WqkYZoOB8oYI/edit?usp=drive_web', '04. 최종 홍보 평가 & 편집 관리')" class="py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold transition border border-slate-700 flex items-center gap-1">
+                            <i class="fa-solid fa-eye"></i> 미리보기
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Data Analytics Section -->
+        <section id="analytics" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-chart-pie text-emerald-400"></i> 캠페인 Analytics & 채널별 성과 시뮬레이션
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">카드뉴스 및 숏츠 콘텐츠를 통한 유입률과 타겟 고객 유입 분포입니다.</p>
+                </div>
+                <span class="text-xs text-slate-400">Real-time Data Analytics</span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <!-- Chart 1: Content Channel Conversion Rate -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base font-bold text-white">📊 홍보 채널별 예상 유입 & 전환 건수</h3>
+                        <span class="text-xs text-amber-400 font-semibold">Total: 10,000 Reach</span>
+                    </div>
+                    <div class="relative h-64">
+                        <canvas id="channelConversionChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Target Demographics -->
+                <div class="glass-card p-6 rounded-2xl border border-slate-800 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-base font-bold text-white">🎯 카드뉴스 & 숏츠 주요 반응 타겟군</h3>
+                        <span class="text-xs text-pink-400 font-semibold">Global & MZ Generation</span>
+                    </div>
+                    <div class="relative h-64 flex items-center justify-center">
+                        <canvas id="demographicChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Execution Roadmap Timeline Section -->
+        <section id="roadmap" class="space-y-6">
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-800 pb-4">
+                <div>
+                    <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                        <i class="fa-solid fa-timeline text-amber-400"></i> 캠페인 추진 로드맵 (Execution Timeline)
+                    </h2>
+                    <p class="text-sm text-slate-400 mt-1">이마트 신촌 B3 K-Palette Zone 오픈 바이럴 주차별 계획입니다.</p>
+                </div>
+                <span class="text-xs text-amber-400 bg-amber-950/40 px-3 py-1 rounded-full border border-amber-800/50">8-Week Plan</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Phase 1 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 relative">
+                    <div class="text-xs font-bold text-amber-400 mb-2">PHASE 01 (1~2주차)</div>
+                    <h3 class="text-base font-bold text-white mb-2">기획 & 카드뉴스 제작</h3>
+                    <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                        <li>카드뉴스 6종 시안 및 문구 확정</li>
+                        <li>구글 설문지 4종 시스템 연동</li>
+                        <li>이마트 신촌 B3 현장 취재</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 relative">
+                    <div class="text-xs font-bold text-pink-400 mb-2">PHASE 02 (3~4주차)</div>
+                    <h3 class="text-base font-bold text-white mb-2">숏츠 제작 & SNS 배포</h3>
+                    <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                        <li>샤크 숏츠.mp4 세로 영상 촬영</li>
+                        <li>인스타그램/틱톡 카드뉴스 게재</li>
+                        <li>설문 01, 02 유입 프로모션</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 relative">
+                    <div class="text-xs font-bold text-purple-400 mb-2">PHASE 03 (5~6주차)</div>
+                    <h3 class="text-base font-bold text-white mb-2">데이터 분석 & 리타겟팅</h3>
+                    <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                        <li>설문 03 (콘텐츠 반응도) 실시</li>
+                        <li>외국인 관광객 유입 정밀 분석</li>
+                        <li>NFC 원터치 서비스 이용률 측정</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4 -->
+                <div class="glass-card p-5 rounded-2xl border border-slate-800 relative">
+                    <div class="text-xs font-bold text-emerald-400 mb-2">PHASE 04 (7~8주차)</div>
+                    <h3 class="text-base font-bold text-white mb-2">최종 평가 & 보고</h3>
+                    <ul class="text-xs text-slate-400 space-y-2 list-disc list-inside">
+                        <li>설문 04 종합 평가 데이터 산출</li>
+                        <li>최종 바이럴 KPI 달성 보고서</li>
+                        <li>향후 매장 확대 가이드라인 수립</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Card News Fullscreen Lightbox Modal -->
+    <div id="cardLightboxModal" class="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-lg hidden flex flex-col items-center justify-center p-4">
+        <div class="relative w-full max-w-2xl max-h-[90vh] flex flex-col items-center">
+            <button onclick="closeCardLightbox()" class="absolute -top-12 right-0 text-slate-300 hover:text-white p-2 text-2xl transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightboxImage" src="01.jpg" alt="카드뉴스 확대보기" class="max-w-full max-h-[80vh] object-contain rounded-2xl border border-slate-700 shadow-2xl">
+            <div class="mt-4 text-center">
+                <h4 id="lightboxTitle" class="text-lg font-bold text-amber-400">CARD 01</h4>
+                <p id="lightboxDesc" class="text-xs text-slate-300 max-w-lg mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Survey Preview Modal -->
+    <div id="surveyModal" class="fixed inset-0 z-50 bg-slate-950/85 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-4xl h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span class="text-sm font-bold text-white ml-2" id="modalTitle">구글 설문지 미리보기</span>
+                </div>
+                <button onclick="closeSurveyModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800 transition">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div class="flex-1 bg-white relative">
+                <iframe id="modalIframe" class="w-full h-full border-0" src="" title="Google Form Preview"></iframe>
+            </div>
+            <div class="px-6 py-3 border-t border-slate-800 bg-slate-950 flex justify-between items-center text-xs text-slate-400">
+                <span>* 구글 보안 설정에 따라 새 창에서 열기가 권장될 수 있습니다.</span>
+                <button onclick="closeSurveyModal()" class="px-4 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-white font-medium transition">
+                    닫기
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 emart-gradient-bg text-slate-950 text-xs font-bold px-4 py-3 rounded-xl shadow-2xl flex items-center gap-2 border border-amber-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-sm"></i>
+        <span id="toastMessage">안내 메시지</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-800 bg-slate-950 py-10 mt-16 text-slate-400 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg emart-gradient-bg flex items-center justify-center text-slate-950 font-black">
+                    <i class="fa-solid fa-cart-shopping text-xs"></i>
+                </div>
+                <div>
+                    <p class="text-slate-200 font-bold">이마트 신촌점 K-Palette Zone 홍보 기획서</p>
+                    <p class="text-[11px] text-slate-500">Card News, 9:16 Shorts & 4 Google Surveys Campaign</p>
+                </div>
+            </div>
+            <p class="text-slate-500">© 2026 e-mart Sinchon PR Strategy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Data for 6 Card News Slides
+        const cardNewsData = [
+            {
+                filename: '01.jpg',
+                badge: 'CARD 01 / 06',
+                title: 'CARD 01 : K-Palette Zone 기획 개요',
+                category: 'CARD 01 : 메인 메세지',
+                desc: '한국 여행 와서 뭐 살지 고민돼? 진짜 한국인이 사랑하는 리얼 픽, 이마트 신촌 K-Palette Zone! 틱톡·샤오홍슈 핫템부터 K-라면 꿀조합까지 한눈에!'
+            },
+            {
+                filename: '02.jpg',
+                badge: 'CARD 02 / 06',
+                title: 'CARD 02 : 타겟 고객 페인포인트 분석',
+                category: 'CARD 02 : 외국인 관광객 고민',
+                desc: '한국 마트만 오면 멘붕 오나요? 사고 싶은 상품 위치 파악, 매운맛 단계/성분 번역 문제, 진짜 한국인 핫템 위치 등 이 모든 고민을 1초 만에 해결!'
+            },
+            {
+                filename: '03.jpeg',
+                badge: 'CARD 03 / 06',
+                title: 'CARD 03 : Solution 01 바닥 안내선 & AR 길찾기',
+                category: 'CARD 03 : 솔루션 01 - 동선 안내',
+                desc: '길 잃을 걱정 없는 K-팔레트 존! 직관적인 노란색 바닥 안내선(Floor Lines)과 AR 길찾기 서비스로 쉽고 편리한 동선을 제공합니다.'
+            },
+            {
+                filename: '04.jpg',
+                badge: 'CARD 04 / 06',
+                title: 'CARD 04 : Solution 02 SNS 핫템 & K-라면 꿀조합',
+                category: 'CARD 04 : 솔루션 02 - 큐레이션',
+                desc: '샤오홍슈/틱톡 빅데이터 기반 실시간 인기 Top 100 큐레이션! 불닭+짜파게티 등 실패 없는 리얼 K-라면 꿀조합 세트를 한 번에 겟하세요.'
+            },
+            {
+                filename: '05.jpg',
+                badge: 'CARD 05 / 06',
+                title: 'CARD 05 : Solution 03 NFC 원터치 정보 서비스',
+                category: 'CARD 05 : 솔루션 03 - NFC 다국어',
+                desc: '번역기 필요 없이 스마트폰을 매대에 Tap! 1초 만에 맵기 단계, 성분, 할랄/비건 정보 및 15초 숏폼 레시피 영상까지 모국어로 확인하세요.'
+            },
+            {
+                filename: '06.jpg',
+                badge: 'CARD 06 / 06',
+                title: 'CARD 06 : 이마트 신촌점 B3 오시는 길 & 공항 배송',
+                category: 'CARD 06 : 매장 위치 & 공항 배송',
+                desc: '어디서 만날 수 있냐고? 지하철 2호선 신촌역과 바로 연결되는 이마트 신촌점 B3! Airport Delivery Service(공항 배송)도 함께 즐기세요.'
+            }
+        ];
+
+        let currentCardIndex = 0;
+
+        // Fallback placeholder image handler if local image file missing
+        function handleCardImgError(imgElement, cardNumber) {
+            const fallbackText = `CARD%200${cardNumber}%20K-Palette%20Zone`;
+            imgElement.src = `https://placehold.co/800x800/1e293b/f59e0b?text=${fallbackText}`;
+        }
+
+        // Initialize Card Carousel Dots
+        function initCardDots() {
+            const container = document.getElementById('cardDotsContainer');
+            container.innerHTML = '';
+            cardNewsData.forEach((_, idx) => {
+                const btn = document.createElement('button');
+                btn.className = `w-3 h-3 rounded-full transition-all duration-200 ${idx === 0 ? 'bg-amber-400 w-6' : 'bg-slate-700 hover:bg-slate-500'}`;
+                btn.onclick = () => selectCard(idx);
+                container.appendChild(btn);
+            });
+        }
+
+        // Update active card display
+        function updateCardDisplay() {
+            const data = cardNewsData[currentCardIndex];
+            const img = document.getElementById('cardNewsMainImage');
+            
+            // Fade effect
+            img.style.opacity = '0.4';
+            setTimeout(() => {
+                img.src = data.filename;
+                img.style.opacity = '1';
+            }, 100);
+
+            document.getElementById('currentCardBadgeNumber').innerText = data.badge;
+            document.getElementById('cardSlideTitle').innerText = data.title;
+            document.getElementById('cardSlideDesc').innerText = data.desc;
+
+            document.getElementById('cardDetailCategory').innerText = data.category;
+            document.getElementById('cardDetailText').innerText = `"${data.desc}"`;
+
+            // Update thumbnails UI
+            for (let i = 0; i < 6; i++) {
+                const thumb = document.getElementById(`thumb-${i}`);
+                if (thumb) {
+                    if (i === currentCardIndex) {
+                        thumb.className = "cursor-pointer relative aspect-square rounded-xl overflow-hidden border-2 border-amber-400 bg-slate-900 group shadow-md transition scale-105 z-10";
+                    } else {
+                        thumb.className = "cursor-pointer relative aspect-square rounded-xl overflow-hidden border border-slate-800 bg-slate-900 group shadow-md transition opacity-70 hover:opacity-100";
+                    }
+                }
+            }
+
+            // Update Dots
+            const dotsContainer = document.getElementById('cardDotsContainer');
+            if (dotsContainer) {
+                Array.from(dotsContainer.children).forEach((dot, idx) => {
+                    if (idx === currentCardIndex) {
+                        dot.className = 'w-6 h-3 rounded-full bg-amber-400 transition-all duration-200';
+                    } else {
+                        dot.className = 'w-3 h-3 rounded-full bg-slate-700 hover:bg-slate-500 transition-all duration-200';
+                    }
+                });
+            }
+        }
+
+        function nextCard() {
+            currentCardIndex = (currentCardIndex + 1) % cardNewsData.length;
+            updateCardDisplay();
+        }
+
+        function prevCard() {
+            currentCardIndex = (currentCardIndex - 1 + cardNewsData.length) % cardNewsData.length;
+            updateCardDisplay();
+        }
+
+        function selectCard(index) {
+            currentCardIndex = index;
+            updateCardDisplay();
+        }
+
+        // Custom Card Image File Uploader
+        function loadCustomCardImages(event) {
+            const files = Array.from(event.target.files);
+            if (files.length === 0) return;
+
+            files.forEach((file, index) => {
+                if (index < cardNewsData.length) {
+                    const objectURL = URL.createObjectURL(file);
+                    cardNewsData[index].filename = objectURL;
+                    const thumbImg = document.querySelector(`#thumb-${index} img`);
+                    if (thumbImg) thumbImg.src = objectURL;
+                }
+            });
+
+            updateCardDisplay();
+            showToast(`${files.length}장의 카드뉴스 이미지가 업로드되었습니다.`);
+        }
+
+        // Lightbox Functions
+        function openCardLightbox() {
+            const data = cardNewsData[currentCardIndex];
+            document.getElementById('lightboxImage').src = data.filename;
+            document.getElementById('lightboxTitle').innerText = data.title;
+            document.getElementById('lightboxDesc').innerText = data.desc;
+            document.getElementById('cardLightboxModal').classList.remove('hidden');
+        }
+
+        function closeCardLightbox() {
+            document.getElementById('cardLightboxModal').classList.add('hidden');
+        }
+
+        // Modal functions
+        function openSurveyModal(url, title) {
+            const modal = document.getElementById('surveyModal');
+            const iframe = document.getElementById('modalIframe');
+            const modalTitle = document.getElementById('modalTitle');
+            
+            modalTitle.innerText = title;
+            iframe.src = url;
+            modal.classList.remove('hidden');
+        }
+
+        function closeSurveyModal() {
+            const modal = document.getElementById('surveyModal');
+            const iframe = document.getElementById('modalIframe');
+            modal.classList.add('hidden');
+            iframe.src = '';
+        }
+
+        // Play default Shark Shorts MP4
+        function playSharkShorts() {
+            const video = document.getElementById('shortsVideo');
+            const iframe = document.getElementById('shortsIframe');
+            const fallback = document.getElementById('videoFallback');
+            const titleDisplay = document.getElementById('shortsTitleDisplay');
+
+            iframe.classList.add('hidden');
+            iframe.src = '';
+            video.classList.remove('hidden');
+            fallback.classList.add('hidden');
+            
+            video.src = "샤크 숏츠.mp4";
+            video.play().then(() => {
+                showToast('🦈 샤크 숏츠.mp4 9:16 비디오가 재생됩니다!');
+            }).catch(() => {
+                handleVideoError();
+            });
+
+            titleDisplay.innerText = "🦈 샤크 숏츠 (Shark Shorts) - 이마트 신촌 K-Palette Zone 바이럴 9:16 영상!";
+        }
+
+        function handleVideoError() {
+            const fallback = document.getElementById('videoFallback');
+            fallback.classList.remove('hidden');
+        }
+
+        function loadLocalVideoFile(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const video = document.getElementById('shortsVideo');
+            const iframe = document.getElementById('shortsIframe');
+            const fallback = document.getElementById('videoFallback');
+            const titleDisplay = document.getElementById('shortsTitleDisplay');
+
+            iframe.classList.add('hidden');
+            iframe.src = '';
+            video.classList.remove('hidden');
+            fallback.classList.add('hidden');
+
+            const fileURL = URL.createObjectURL(file);
+            video.src = fileURL;
+            video.play();
+
+            titleDisplay.innerText = `📹 ${file.name} (9:16 로컬 비디오)`;
+            showToast(`'${file.name}' 비디오 파일이 연동되었습니다.`);
+        }
+
+        function toggleVideoMute() {
+            const video = document.getElementById('shortsVideo');
+            const soundIcon = document.getElementById('soundIcon');
+            const soundLabel = document.getElementById('soundLabel');
+
+            if (video.muted) {
+                video.muted = false;
+                soundIcon.className = "fa-solid fa-volume-high text-base";
+                soundLabel.innerText = "소리 켬";
+                showToast('음소가 해제되었습니다.');
+            } else {
+                video.muted = true;
+                soundIcon.className = "fa-solid fa-volume-xmark text-base";
+                soundLabel.innerText = "음소거";
+                showToast('음소거 상태로 전환되었습니다.');
+            }
+        }
+
+        function updateShortsVideo() {
+            const input = document.getElementById('customShortsInput').value.trim();
+            const iframe = document.getElementById('shortsIframe');
+            const video = document.getElementById('shortsVideo');
+            const fallback = document.getElementById('videoFallback');
+
+            if (!input) {
+                showToast('유효한 YouTube Shorts URL을 입력해주세요.');
+                return;
+            }
+
+            let videoId = input;
+            if (input.includes('youtube.com/shorts/')) {
+                videoId = input.split('youtube.com/shorts/')[1].split('?')[0];
+            } else if (input.includes('youtu.be/')) {
+                videoId = input.split('youtu.be/')[1].split('?')[0];
+            } else if (input.includes('youtube.com/watch?v=')) {
+                videoId = input.split('v=')[1].split('&')[0];
+            }
+
+            video.pause();
+            video.classList.add('hidden');
+            fallback.classList.add('hidden');
+            iframe.classList.remove('hidden');
+
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&controls=1&loop=1`;
+            showToast('유튜브 숏츠 영상이 연동되었습니다!');
+        }
+
+        let isLiked = false;
+        function likeShorts() {
+            const icon = document.getElementById('likeIcon');
+            const count = document.getElementById('likeCount');
+            if (!isLiked) {
+                icon.classList.add('text-red-500');
+                count.innerText = '42.8K + 1';
+                showToast('숏츠에 좋아요를 표시했습니다!');
+                isLiked = true;
+            } else {
+                icon.classList.remove('text-red-500');
+                count.innerText = '42.8K';
+                isLiked = false;
+            }
+        }
+
+        function shareProposal() {
+            const dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            showToast('기획서 웹페이지 주소가 클립보드에 복사되었습니다!');
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            toastMessage.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        window.addEventListener('load', () => {
+            initCardDots();
+            updateCardDisplay();
+
+            // Chart 1: Channel Conversion Bar Chart
+            const ctx1 = document.getElementById('channelConversionChart').getContext('2d');
+            new Chart(ctx1, {
+                type: 'bar',
+                data: {
+                    labels: ['카드뉴스 (6종)', '9:16 샤크 숏츠', '매장 NFC 태그', '설문 4종 유입'],
+                    datasets: [
+                        {
+                            label: '예상 노출/도달 (건)',
+                            data: [3500, 5200, 1800, 2500],
+                            backgroundColor: '#f59e0b',
+                            borderRadius: 6
+                        },
+                        {
+                            label: '실제 매장/설문 전환 (건)',
+                            data: [680, 1240, 520, 1960],
+                            backgroundColor: '#ec4899',
+                            borderRadius: 6
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#94a3b8', font: { family: 'Noto Sans KR' } } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                    }
+                }
+            });
+
+            // Chart 2: Demographic Doughnut Chart
+            const ctx2 = document.getElementById('demographicChart').getContext('2d');
+            new Chart(ctx2, {
+                type: 'doughnut',
+                data: {
+                    labels: ['외국인 자유여행객(FIT)', '2030 국내 MZ세대', '대학생/신촌 유동인구', '기타 관람객'],
+                    datasets: [{
+                        data: [40, 35, 15, 10],
+                        backgroundColor: ['#ffc800', '#ec4899', '#3b82f6', '#10b981'],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#94a3b8', font: { family: 'Noto Sans KR' } } }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
